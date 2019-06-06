@@ -33,11 +33,16 @@ if __name__ == '__main__':
     dob_field = ttk.Entry(root, width=30)
     dob_field.insert(0, "dd-mm-yyyy")
     dob_field.pack()
+    # make this field read only
+    dob_field.state(["readonly"])
 
     # Field Password
     password_field = ttk.Entry(root, width=30)
     password_field.config(show="*")
     password_field.pack()
+    # to disable entry field and then enable
+    password_field.state(["disabled"])
+    password_field.state(["!disabled"])
 
     submitButton = Button(root, text="Submit", command=save_form_values)
     submitButton["state"] = "normal"
